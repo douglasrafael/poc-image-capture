@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PoC Image Capture</string>
+
+    <string name="title_android_image_cropper">Android Image Cropper</string>
+    <string name="title_up_photo">Carregar Foto</string>
+
+    <string name="message_refused_permissions">Você precisa fornecer as permissões!!!</string>
+    <string name="message_error">Ocorreu um erro inesperado!</string>
+</resources>
