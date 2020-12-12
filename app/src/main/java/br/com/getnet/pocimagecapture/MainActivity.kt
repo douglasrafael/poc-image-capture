@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import br.com.getnet.pocimagecapture.databinding.ActivityMainBinding
 import br.com.getnet.pocimagecapture.example1.AndroidImageCropperActivity
 import br.com.getnet.pocimagecapture.example2.DocumentScannerActivity
+import br.com.getnet.pocimagecapture.example3.FileChooserActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.button2.setOnClickListener {
             startActivity(Intent(this, DocumentScannerActivity::class.java))
+        }
+
+        binding.button3.setOnClickListener {
+            startActivity(Intent(this, FileChooserActivity::class.java))
         }
     }
 }

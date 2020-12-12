@@ -41,6 +41,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Document Scanner" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="File Chooser" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

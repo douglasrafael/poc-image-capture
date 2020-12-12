@@ -30,7 +30,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".example1.AndroidImageCropperActivity" />
         <activity android:name=".example2.DocumentScannerActivity" />
-        <activity android:name=".example3.AndroidDocumentScannerActivity" />
+        <activity android:name=".example3.FileChooserActivity" />
     </application>
 
 </manifest>
