@@ -6,6 +6,7 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
+import android.text.format.Formatter
 import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -56,9 +57,10 @@ class FileChooserActivity : BaseActivity() {
         if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == RESULT_OK) {
             data?.data?.let { uri ->
                 val filename = getFileName(uri)
+                val size = Formatter.formatShortFileSize(this, getFileSize(uri))
+                Log.d(LOG_TAG, "onActivityResult() | filename: $filename | size: $size")
 
-                Log.d(LOG_TAG, "onActivityResult() $filename")
-                binding.filenameTextView.text = filename
+                binding.filenameTextView.text = filename.plus("\nSize: ").plus(size)
             }
         }
     }
@@ -81,6 +83,26 @@ class FileChooserActivity : BaseActivity() {
         }
 
         return fileName
+    }
+
+    @Throws(IllegalArgumentException::class)
+    private fun getFileSize(uri: Uri): Long {
+        var size = 0L
+
+        val cursor: Cursor? = contentResolver.query(
+            uri, null, null, null, null
+        )
+        cursor?.let {
+            if (it.count <= 0) {
+                it.close()
+                throw IllegalArgumentException("Can't obtain file size, cursor is empty")
+            }
+            it.moveToFirst()
+            size = it.getLong(it.getColumnIndexOrThrow(OpenableColumns.SIZE))
+            cursor.close()
+        }
+
+        return size
     }
 
     companion object {
