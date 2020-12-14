@@ -1,5 +1,6 @@
 
 # PoC Captura de Imagem e Seleção de Documento  
+[baixar apk](https://github.com/douglasrafael/poc-image-file-manager/releases/download/1.0.0/poc01-image-file_v1.0.0.apk)
   
 ### [Android Image Cropper](https://github.com/ArthurHub/Android-Image-Cropper)
 Biblioteca de fácil uso. Permite a captura de imagem por meio da câmera ou galeria, recorte e rotação.
